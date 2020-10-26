@@ -146,10 +146,10 @@ p {
 hr {
   position: absolute;
   top: 80%;
-  right: 0;
-  left: 0;
   margin: auto;
+  height: 0;
   width: 30%;
+  border: none;
   border-top: solid white 1px;
 }
 .contact {
@@ -216,7 +216,7 @@ a {
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1031px) {
   .navlinks {
     display: flex;
     flex-direction: column;
@@ -261,10 +261,10 @@ a {
   }
   .project {
     font-size: 10px;
-    width: 120px;
-    height: 40px;
+    width: 140px;
+    height: 50px;
     margin: 5px;
-    padding: 10px 5px;
+    padding: auto;
   }
   .contact {
     bottom: 0;
@@ -274,15 +274,22 @@ a {
   }
 }
 @media screen and (max-width: 443px) {
+  .about,
+  .reachMe,
+  .proj {
+    width: 100%;
+  }
   p {
-    font-size: 13px;
+    font-size: 12px;
   }
   .project {
+    padding: 5px 5px;
     width: 100px;
     height: 30px;
     margin: 5px;
   }
   hr {
+    height: 0;
     width: 50%;
     top: 80%;
   }
