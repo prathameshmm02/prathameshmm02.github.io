@@ -1,5 +1,10 @@
 var sects = document.getElementsByTagName("section");
 var navbuts = document.getElementsByTagName("a");
+setInterval(() => {
+  document.querySelector("body").style.height = `${window.innerHeight}px`;
+
+}, 50);
+
 
 
 function actInact() {
