@@ -9,6 +9,9 @@ body {
     background-size: cover;
     background-attachment: fixed;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 * {
   margin: 0;
@@ -42,15 +45,16 @@ body {
   color: white;
   text-decoration: none;
   outline: none;
-  transition: color, border 0.5s ease;
+  transition: all .5s ease;
   cursor: pointer;
 }
 .active {
-  background-image: linear-gradient(to left, #0051ff, #739fff);
+  background-color:rgba(139, 137, 137, 0.288);
 }
-.inactive:hover {
-  color: #01c5c4;
-  border-color: #01c5c4;
+.inactive:hover, .active:hover {
+  color: #312D2A;
+  border-color: transparent;
+  box-shadow: 0 10px 20px #312d2a59;
 }
 
 .intro,
@@ -58,9 +62,7 @@ body {
 .reachMe,
 .proj {
   display: block;
-  margin: 15%  auto 0 ;
   width: 35%;
-  height: 20%;
 }
 .intro {
   text-align: left;
@@ -79,17 +81,14 @@ body {
   display: none;
 }
 .proj {
-  width: 50%;
-  height: 50%;
+  width: 40%;
 }
 .about {
   width: 40%;
-  height: 25%;
 }
 .reachMe {
   top: 15%;
   width: 30%;
-  height: 15%;
 }
 .name {
   margin: auto;
@@ -108,34 +107,36 @@ h1 {
 }
 p {
   padding: 20px;
-  color: #00fff2;
+  color: #36302D;
   font-size: 20px;
   animation: fadeIn 1s ease;
   opacity: 0;
   border-radius: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
   animation-fill-mode: forwards;
   text-align: center;
 }
 .project {
+  box-sizing: content-box;
   padding: 15px 20px;
   margin: 10px;
-  height: 50px;
-  width: 150px;
-  font-weight: 400;
-  font-size: 12px;
   display: inline-block;
   text-decoration: none;
-  color: #ffae00;
-  border: solid #ffae00 2px;
+  color: #E9E8E6;
+  border: solid #E9E8E6 2px;
   font-weight: bold;
   border-radius: 40px;
+  transition: all 1s ease;
   border-bottom-right-radius: 0px;
   animation: floatInBottom 0.5s ease;
   animation-fill-mode: backwards;
 }
+.project:hover{
+  color: #322E2B;
+  border-color: transparent;
+  box-shadow: 0 10px 20px #312d2a8a;
+  
+}
 .projectContainer {
-
   justify-content: center;
   margin-top: 20px;
   height: 100px;
@@ -148,6 +149,7 @@ p {
   animation-delay: 1.5s;
 }
 .project:nth-child(3) {
+  width: 100px;
   animation-delay: 2s;
 }
 hr {
@@ -169,11 +171,12 @@ hr {
   bottom: 0;
   margin: auto;
 }
-.discord {
-  text-align: center;
+img:hover{
+  filter: invert();
 }
-.discord:hover #disId {
-  opacity: 1;
+.discord {
+  cursor: pointer;
+  text-align: center;
 }
 #disId {
   animation: none;
@@ -182,9 +185,12 @@ hr {
   padding: 5px;
   transition: all 0.5s ease;
 }
+.discord:hover #disId{
+  opacity: 1;
+}
 a {
   text-decoration: none;
-  color: #ffffff;
+  color: #312D2A;
 }
 .contact a {
   margin: 0px 50px;
@@ -226,55 +232,24 @@ a {
 @media screen and (max-width: 1050px) {
   .navlinks {
     align-items: center;
-    height: 200px;
-  }
-  .navbar {
-    top: 0%;
   }
   .navlinks li a {
-    width: 110px;
-    height: 40px;
-    padding: 8px 5px;
-    font-size: 15px;
-  }
-
-  .intro {
-    margin: 25% auto 0 ;
-  }
-  .name {
     width: 150px;
-    font-size: 15px;
-  }
-  p {
-    font-size: 15px;
+    height: 55px;
+    font-size: 18px;
   }
   img {
     width: auto;
     height: 50px;
     padding: 0px 15px;
   }
-  .about,
-  .reachMe,
-  .proj {
-    margin: 30% auto 0 ;
-    width: 75%;
-    padding: 20px;
+  p{
+    font-size: 16px;
   }
-  .projectContainer {
-    position: relative;
-    left: -25%;
-    height: 20%;
-    width: 150%;
-  }
-  .project {
+  .project{
+    height: 15px;
+    font-weight: 500;
     font-size: 12px;
-    padding: 10px 0;
-    height: 40px;
-    width: 140px;
-    margin: 5px;
-  }
-  .contact {
-    bottom: 0;
   }
   .contact a {
     margin: 0px 25px;
@@ -282,29 +257,26 @@ a {
 }
 @media screen and (max-width: 600px) {
   *{
-    font-size: 15px;
+    font-size: 20px;
+  }
+  .navbar{
+    top: 0;
   }
   .navlinks{
+    height: 300px;
     display: flex;
+    justify-content: space-around;
     flex-direction: column;
   }
-  br{
-    display: block;
-    content: "";
-    margin: 20px 0px;
+  .about, .proj, .reachMe{
+    width: 100%;
   }
-  p {
-    font-size: 13px;
-  }
-  .intro, .about,
-  .reachMe,
-  .proj {
-    margin-top: 35vh;
+  p, a {
+    font-size: 15px;
   }
   .project {
     width: 120px;
     margin: 5px;
-    padding: 10px 5px 5px;
   }
   hr {
     width: 50%;

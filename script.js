@@ -1,5 +1,7 @@
 var sects = document.getElementsByTagName("section");
 var navbuts = document.getElementsByTagName("a");
+
+
 function actInact() {
   for (i = 0; i < 4; i++) {
     sects[i].style.display = "none";
