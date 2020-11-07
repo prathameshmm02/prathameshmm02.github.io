@@ -1,7 +1,13 @@
 var sects = document.getElementsByTagName("section");
 var navbuts = document.getElementsByTagName("a");
-
-
+const body = document.querySelector("body");
+body.style.display = "none";
+const bgImg = new Image();
+bgImg.src = "./assets/cover.jpg";
+bgImg.onload= ()=>  {
+  body.style.display = "flex";
+};
+body.style.height = `${window.innerHeight}px`;
 function actInact() {
   for (i = 0; i < 4; i++) {
     sects[i].style.display = "none";

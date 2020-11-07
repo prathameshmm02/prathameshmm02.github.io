@@ -2,12 +2,11 @@ html {
   overflow: hidden;
 }
 body {
-    width: 100%;
-    height: 100vh;
-    background-image: url(./assets/cover.jpg);
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
+  background-image: url(./assets/cover.jpg);
+  background-position: center;
+  background-size: cover;
   text-align: center;
   display: flex;
   align-items: center;
@@ -16,6 +15,8 @@ body {
 * {
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
@@ -32,31 +33,29 @@ body {
   list-style: none;
   justify-content: space-around;
 }
-
 .inactive,
 .active {
-  padding: 15px 20px;
+  display: table-cell;
+  vertical-align: middle;
   height: 60px;
   width: 170px;
-  display: inline-block;
   border: solid white 2px;
   border-radius: 40px;
   font-size: 20px;
   color: white;
   text-decoration: none;
-  outline: none;
   transition: all .5s ease;
   cursor: pointer;
 }
 .active {
-  background-color:rgba(139, 137, 137, 0.288);
+  background-color:rgba(139, 137, 137, 0.411);
 }
 .inactive:hover, .active:hover {
   color: #312D2A;
   border-color: transparent;
-  box-shadow: 0 10px 20px #312d2a59;
+  background: transparent;
+  box-shadow: 0 10px 20px #312d2a80;
 }
-
 .intro,
 .about,
 .reachMe,
@@ -70,7 +69,6 @@ body {
 .attr {
   text-align: center;
   animation-delay: 1s;
-  font-weight: 500;
   background: none;
 }
 .about,
@@ -81,7 +79,7 @@ body {
   display: none;
 }
 .proj {
-  width: 40%;
+  width: 60ch;
 }
 .about {
   width: 40%;
@@ -96,11 +94,10 @@ body {
 }
 h1 {
   animation: 1s floatInBottom ease;
-  font-weight: 500;
   color: #f1f6f9;
   animation-fill-mode: forwards;
 }
-.name h1:nth-child(4) {
+.name h1:nth-child(3) {
   animation: 1s floatInTop ease;
   color: #f1f6f9;
   animation-fill-mode: forwards;
@@ -123,9 +120,8 @@ p {
   text-decoration: none;
   color: #E9E8E6;
   border: solid #E9E8E6 2px;
-  font-weight: bold;
   border-radius: 40px;
-  transition: all 1s ease;
+  transition: all .5s ease;
   border-bottom-right-radius: 0px;
   animation: floatInBottom 0.5s ease;
   animation-fill-mode: backwards;
@@ -133,8 +129,7 @@ p {
 .project:hover{
   color: #322E2B;
   border-color: transparent;
-  box-shadow: 0 10px 20px #312d2a8a;
-  
+  box-shadow: 0 10px 20px #312d2a8a; 
 }
 .projectContainer {
   justify-content: center;
@@ -159,6 +154,7 @@ hr {
   left: 0;
   margin: auto;
   width: 30%;
+  border: none;
   border-top: solid white 1px;
 }
 .contact {
@@ -172,7 +168,7 @@ hr {
   margin: auto;
 }
 img:hover{
-  filter: invert();
+  filter: invert(20%);
 }
 .discord {
   cursor: pointer;
@@ -228,15 +224,18 @@ a {
     opacity: 0;
   }
 }
-
 @media screen and (max-width: 1050px) {
+  .navbar{
+    width: 90%;
+  }
   .navlinks {
     align-items: center;
+    width: 100%;
   }
-  .navlinks li a {
-    width: 150px;
+  .active, .inactive {
+    width: 130px;
     height: 55px;
-    font-size: 18px;
+    font-size: 14px;
   }
   img {
     width: auto;
@@ -248,7 +247,6 @@ a {
   }
   .project{
     height: 15px;
-    font-weight: 500;
     font-size: 12px;
   }
   .contact a {
@@ -256,27 +254,35 @@ a {
   }
 }
 @media screen and (max-width: 600px) {
-  *{
-    font-size: 20px;
+  body{
+    background-position: left;
+    background-size: 165vh;
   }
   .navbar{
     top: 0;
   }
   .navlinks{
-    height: 300px;
+    height: 30vh;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
   }
+  .navlinks li a{
+    font-size: 14px;
+    width: 130px;
+    height: 40px;
+  }
+  .name{
+    font-size: 15px;
+  }
   .about, .proj, .reachMe{
-    width: 100%;
+    width: 90%;
   }
   p, a {
     font-size: 15px;
   }
-  .project {
-    width: 120px;
-    margin: 5px;
+  p{
+    background-color: #e9e8e670;
   }
   hr {
     width: 50%;
