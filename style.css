@@ -9,7 +9,6 @@ html {
   font-family: "Poppins", sans-serif;
 }
 body {
-  background: linear-gradient(to left, #8280ff, #4f92ce);
   overflow-x: hidden;
 }
 nav {
@@ -28,21 +27,20 @@ a {
   height: 10vh;
   width: 25%;
   color: #393e46;
-  background-color: #eeeeee;
+  background-color: #dddddd;
   text-decoration: none;
   outline: none;
   transition: all 0.5s ease-in;
 }
-a:hover {
+nav a:hover{
   background: transparent;
 }
-
 #home {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: transparent;
+  background: linear-gradient(to left, #8280ff, #4f92ce);
   color: white;
   height: 100vh;
 }
@@ -74,14 +72,13 @@ a:hover {
   height: 100vh;
 }
 .svg {
-  width: 25%;
+  width: 50%;
+  height: auto;
   filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
 }
 .svg:nth-child(1) {
+  width: 30%;
   margin-left: 10%;
-}
-.svg:nth-child(2) {
-  width: 40%;
 }
 #about p {
   margin-left: 20%;
@@ -103,6 +100,8 @@ a:hover {
   justify-content: space-evenly;
 }
 #project a {
+  background-color: rgba(255, 255, 255, 0.589);
+  box-shadow: none;
   width: 15%;
   border-radius: 10px;
 }
@@ -125,7 +124,10 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
-  width: 30%;
+  width: 50%;
+}
+.links a{
+  box-shadow: none;
 }
 .links a:nth-child(1) {
   display: flex;
@@ -138,9 +140,11 @@ a:hover {
   position: absolute;
   content: "quickersilver#3149";
   font-size: smaller;
+  z-index: 10;
   padding-top: 5%;
   color: white;
   transition: all 0.5s ease;
+  pointer-events: all;
   opacity: 0;
 }
 #contact a {
@@ -184,7 +188,25 @@ a:hover {
     opacity: 1;
   }
 }
+@media screen and (max-width: 900px){
+  #about{
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  #about * {
+    margin: 0 !important;
+  }
+  .projectContainer a{
+    width: 20% !important;
+  }
+}
 @media screen and (max-width: 600px) {
+  nav{
+    height: 7vh;
+  }
+  nav a{
+    height: 7vh; 
+  }
   #about,
   #project,
   #contact {
@@ -196,11 +218,12 @@ a:hover {
     align-items: center;
     justify-content: space-around;
   }
-  #project a {
-    width: 150px;
+  .projectContainer a {
+    width: 150px !important;
   }
-  .svg {
-    width: 50%;
+  .svg:nth-child(1) {
+    margin-left: 0px; 
+    width: 80%;
   }
   .svg:nth-child(2) {
     width: 80%;
@@ -222,4 +245,8 @@ a:hover {
   .links a:nth-child(1)::after {
     padding-top: 15%;
   }
+#contact{
+  height: 100vh;
+}
+  
 }
