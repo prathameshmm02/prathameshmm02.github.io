@@ -32,7 +32,7 @@ a {
   outline: none;
   transition: all 0.5s ease-in;
 }
-nav a:hover{
+nav a:hover {
   background: transparent;
 }
 #home {
@@ -115,10 +115,13 @@ nav a:hover{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   background: linear-gradient(to left, #fb929e, #df9755);
-  height: 90vh;
+  height: 100vh;
   color: black;
+}
+#contact p {
+  margin-top: 100px;
 }
 .links {
   display: grid;
@@ -126,7 +129,7 @@ nav a:hover{
   grid-template-rows: 1fr;
   width: 50%;
 }
-.links a{
+.links a {
   box-shadow: none;
 }
 .links a:nth-child(1) {
@@ -188,24 +191,24 @@ nav a:hover{
     opacity: 1;
   }
 }
-@media screen and (max-width: 900px){
-  #about{
+@media screen and (max-width: 900px) {
+  #about {
     flex-direction: column;
     justify-content: space-around;
   }
   #about * {
     margin: 0 !important;
   }
-  .projectContainer a{
+  .projectContainer a {
     width: 20% !important;
   }
 }
 @media screen and (max-width: 600px) {
-  nav{
+  nav {
     height: 7vh;
   }
-  nav a{
-    height: 7vh; 
+  nav a {
+    height: 7vh;
   }
   #about,
   #project,
@@ -222,7 +225,7 @@ nav a:hover{
     width: 150px !important;
   }
   .svg:nth-child(1) {
-    margin-left: 0px; 
+    margin-left: 0px;
     width: 80%;
   }
   .svg:nth-child(2) {
@@ -245,8 +248,10 @@ nav a:hover{
   .links a:nth-child(1)::after {
     padding-top: 15%;
   }
-#contact{
-  height: 100vh;
-}
-  
+  #contact {
+    height: 100vh;
+  }
+  #contact p {
+    margin-top: 0;
+  }
 }
