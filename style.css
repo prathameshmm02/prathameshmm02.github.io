@@ -27,10 +27,13 @@ a {
   height: 10vh;
   width: 25%;
   color: #393e46;
-  background-color: #dddddd;
+  background-color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
   outline: none;
   transition: all 0.5s ease-in;
+}
+nav a {
+  backdrop-filter: blur(10px) saturate(130%);
 }
 nav a:hover {
   background: transparent;
@@ -100,7 +103,6 @@ nav a:hover {
   justify-content: space-evenly;
 }
 #project a {
-  background-color: rgba(255, 255, 255, 0.589);
   box-shadow: none;
   width: 15%;
   border-radius: 10px;
