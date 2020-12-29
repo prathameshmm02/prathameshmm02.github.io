@@ -7,13 +7,14 @@ html {
   box-sizing: border-box;
   text-align: center;
   font-family: "Poppins", sans-serif;
+  
 }
 body {
   overflow-x: hidden;
 }
 nav {
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   height: 10vh;
   width: 100%;
   display: flex;
@@ -51,19 +52,57 @@ nav a:hover {
   opacity: 0;
   animation: 1s fadeIn forwards ease 1s;
 }
-.name h1:nth-child(1) {
+.switch{
+  padding: 5px;
+  height: 10%;
+  font-size: medium;
+  position: absolute;
+  right: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  outline: none;
+  border-radius: 40px;
+}
+.intro{
+  display: none;
+  flex-direction: column;
+}
+.intro h1:nth-child(1) {
   animation: 1s floatInBottom ease;
 }
-.name h1:nth-child(2) {
+.intro h1:nth-child(2) {
   animation: 1s floatInTop ease;
 }
-
-.circle {
+.another-intro{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.main{
+  display: flex;
+  flex-direction: column;
+  z-index: 0;
+}
+.main h1{ 
+  z-index: -1;
   position: absolute;
-  fill: #3b92dd83;
-  top: -22%;
-  left: -17%;
-  filter: drop-shadow(10px 0 10px rgba(0, 0, 0, 0.2));
+  width: 300px;
+  transform: translateY(50px);
+}
+.main h1:nth-child(1){
+  animation: forwards ticker 1s ease, forwards tickerGo 1s ease 2s;
+}
+.main h1:nth-child(2){
+  animation: forwards ticker 1s ease 2s;
+}
+.top, .bottom{
+  
+  z-index: 1;
+  background-image: linear-gradient(to right, rgb(100, 139, 226), rgb(109, 135, 235));
+}
+.top, .bottom, .main{
+  width: 300px;
+  height: 50px;
 }
 #about {
   display: flex;
@@ -77,6 +116,7 @@ nav a:hover {
 .svg {
   width: 50%;
   height: auto;
+  opacity: 0;
   filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
 }
 .svg:nth-child(1) {
@@ -163,6 +203,26 @@ nav a:hover {
 }
 .links img:hover {
   filter: invert(20%);
+}
+.fade-in-class{
+  animation: fadeIn 2s ease;
+  animation-fill-mode: forwards;
+}
+@keyframes ticker{
+  from{
+    transform: translateY(50px);
+  }
+  to{
+    transform: translateY(0px);
+  }
+}
+@keyframes tickerGo{
+  from{
+    transform: translateY(0px);
+  }
+  to{
+    transform: translateY(-50px);
+  }
 }
 
 @keyframes floatInTop {
