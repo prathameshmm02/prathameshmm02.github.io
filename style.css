@@ -99,11 +99,7 @@ nav a:hover {
 .top,
 .bottom {
   z-index: 1;
-  background-image: linear-gradient(
-    to right,
-    rgb(100, 139, 226),
-    rgb(109, 135, 235)
-  );
+  background-image: linear-gradient(to right, #648be2, #6d87eb);
 }
 .top,
 .bottom,
@@ -168,7 +164,7 @@ nav a:hover {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
 }
-.links p{
+.links p {
   display: none;
   padding: 5px;
   border-radius: 10px;
@@ -234,6 +230,14 @@ nav a:hover {
   }
 }
 @media screen and (max-width: 900px) {
+  .top,
+  .bottom {
+    background-image: linear-gradient(
+      to right,
+      #5d8de0 10px,
+      #6d89ed
+    ) !important;
+  }
   #about {
     flex-direction: column;
     justify-content: space-around;
@@ -245,6 +249,10 @@ nav a:hover {
 @media screen and (max-width: 600px) {
   nav a {
     height: 7vh;
+  }
+  .top,
+  .bottom {
+    background-image: linear-gradient(to right, #5590d6, #7487f2) !important;
   }
   #project,
   #contact,
