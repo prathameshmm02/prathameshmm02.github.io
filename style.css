@@ -25,7 +25,7 @@ a {
   height: 10vh;
   width: 25%;
   color: #393e46;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: #ffffff80;
   text-decoration: none;
   transition: background 0.5s ease-in;
 }
@@ -59,7 +59,7 @@ nav a:hover {
   font-size: medium;
   position: absolute;
   right: 0;
-  background: rgba(255, 255, 255, 0.3);
+  background: #ffffff4d;
   border: none;
   outline: none;
   border-radius: 30%;
@@ -116,7 +116,7 @@ nav a:hover {
   width: 50%;
   height: auto;
   opacity: 0;
-  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 0 20px #00000080);
 }
 .svg:nth-child(1) {
   width: 30%;
@@ -147,7 +147,7 @@ nav a:hover {
 }
 #project a:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 20px #0000004d;
 }
 #contact {
   display: flex;
@@ -232,11 +232,7 @@ nav a:hover {
 @media screen and (max-width: 900px) {
   .top,
   .bottom {
-    background-image: linear-gradient(
-      to right,
-      #5d8de0 10px,
-      #6d89ed
-    ) !important;
+    background-image: linear-gradient(to right, #5d8de0, #6d89ed) !important;
   }
   #about {
     flex-direction: column;
