@@ -141,8 +141,8 @@ nav a:hover {
 #project a {
   background-color: #eeeeee75;
   box-shadow: none;
-  width: 20%;
-  border-radius: 20px;
+  width: 15%;
+  border-radius: 40px;
   transition: box-shadow 1s ease, transform 1s ease;
 }
 #project a:hover {
